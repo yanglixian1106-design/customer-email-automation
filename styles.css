@@ -1,0 +1,192 @@
+/* Apple Store-inspired presentation; existing Streamlit controls stay intact. */
+:root {
+  --email-ink: #1d1d1f;
+  --email-muted: #6e6e73;
+  --email-blue: #0071e3;
+  --email-surface: #f5f5f7;
+}
+.stApp {
+  color-scheme: light;
+  background: var(--email-surface);
+  color: var(--email-ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+}
+[data-testid="stAppViewContainer"], [data-testid="stMain"] {
+  background: var(--email-surface);
+  color: var(--email-ink);
+}
+[data-testid="stHeader"] { background: transparent; }
+[data-testid="stAppDeployButton"] { display: none; }
+[data-testid="stMainBlockContainer"] {
+  max-width: 900px;
+  padding: 4.2rem 3rem 4rem;
+}
+h1, h2, h3, p, label, input, textarea, button {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif !important;
+}
+h1 {
+  color: #850b33 !important;
+  font-size: clamp(2rem, 4.2vw, 3.15rem) !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 1.08 !important;
+  padding-bottom: 1.5rem !important;
+}
+h2, h3 {
+  color: var(--email-ink) !important;
+  letter-spacing: -0.025em !important;
+  font-weight: 600 !important;
+}
+h3 { font-size: 1.45rem !important; padding-bottom: 0.85rem !important; }
+[data-testid="stForm"] {
+  border: 1px solid rgba(0, 0, 0, 0.035);
+  border-radius: 26px;
+  background: #fff;
+  padding: 28px;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.045);
+}
+[data-testid="stWidgetLabel"] p {
+  color: var(--email-ink) !important;
+  font-size: 0.86rem !important;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+[data-testid="stTextInputRootElement"],
+[data-testid="stTextAreaRootElement"],
+[data-baseweb="input"], [data-baseweb="textarea"] {
+  background: #fafafa !important;
+  border-radius: 12px !important;
+  border-color: #d2d2d7 !important;
+  box-shadow: none;
+}
+[data-baseweb="base-input"] { background: transparent !important; }
+input, textarea {
+  color: var(--email-ink) !important;
+  -webkit-text-fill-color: var(--email-ink) !important;
+  background: #fafafa !important;
+  font-size: 0.95rem !important;
+  line-height: 1.55 !important;
+  caret-color: var(--email-blue);
+}
+input { min-height: 46px; }
+textarea { padding: 14px !important; }
+input::placeholder, textarea::placeholder {
+  color: #86868b !important;
+  -webkit-text-fill-color: #86868b !important;
+  opacity: 1;
+}
+[data-baseweb="input"]:focus-within,
+[data-baseweb="textarea"]:focus-within {
+  border-color: #0071e3 !important;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15) !important;
+}
+[data-testid="stFormSubmitButton"] button,
+[data-testid="stDownloadButton"] button {
+  background: var(--email-blue) !important;
+  border: 1px solid transparent !important;
+  border-radius: 999px !important;
+  color: #fff !important;
+  min-height: 44px;
+  padding: 0.6rem 1.3rem !important;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+  box-shadow: none !important;
+  transition: background 160ms ease, box-shadow 160ms ease;
+}
+[data-testid="stFormSubmitButton"] button p,
+[data-testid="stDownloadButton"] button p { color: #fff !important; }
+[data-testid="stFormSubmitButton"] button:hover,
+[data-testid="stDownloadButton"] button:hover { background: #0077ed !important; }
+button:focus-visible {
+  outline: 3px solid rgba(0, 113, 227, 0.45) !important;
+  outline-offset: 3px;
+}
+[data-testid="stSidebar"] {
+  background: #fafafa !important;
+  border-right: 1px solid #e5e5e7;
+  color: var(--email-ink) !important;
+}
+[data-testid="stSidebarUserContent"] { padding-top: 2.5rem; }
+[data-testid="stSidebar"] h2 { font-size: 1.35rem !important; }
+[data-testid="stSidebar"] [data-testid="stExpander"] details {
+  background: #fff;
+  border: 1px solid #e5e5e7;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.025);
+}
+[data-testid="stSidebar"] summary {
+  color: var(--email-ink) !important;
+  padding: 0.85rem 1rem !important;
+}
+[data-testid="stSidebar"] summary:hover { background: #f5f5f7; }
+[data-testid="stSidebar"] summary p {
+  color: var(--email-ink) !important;
+  font-weight: 500;
+  font-size: 0.93rem;
+}
+[data-testid="stCaptionContainer"] p { color: var(--email-muted) !important; }
+[data-testid="stSidebar"] [data-testid="stButton"] button {
+  background: #f5f5f7;
+  color: var(--email-ink);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  text-align: left;
+}
+[data-testid="stSidebar"] [data-testid="stButton"] button p { color: var(--email-ink); }
+[data-testid="stSidebar"] [data-testid="stButton"] button:hover { background: #e8e8ed; }
+[data-testid="stSidebar"] button:not([kind="primary"]),
+[data-testid="stHeader"] button { color: var(--email-muted); }
+[data-baseweb="input"] button { color: var(--email-muted) !important; }
+[data-testid="stTextArea"] textarea:disabled {
+  opacity: 1;
+  background: #fff !important;
+  color: var(--email-ink) !important;
+  -webkit-text-fill-color: var(--email-ink) !important;
+}
+hr { border-color: #dedee2 !important; margin: 2rem 0 !important; }
+@media (max-width: 640px) {
+  [data-testid="stMainBlockContainer"] { padding: 3rem 1.2rem 2rem; }
+  [data-testid="stForm"] { padding: 20px; border-radius: 22px; }
+  h1 { font-size: 2rem !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  button { transition: none !important; }
+}
+/* Expander headers retain dark theme backgrounds unless explicitly overridden. */
+[data-testid="stSidebar"] summary,
+[data-testid="stSidebar"] summary:focus {
+  background: #fff !important;
+  color: #1d1d1f !important;
+}
+[data-testid="stSidebar"] summary:hover { background: #f5f5f7 !important; }
+[data-testid="stSidebar"] summary span,
+[data-testid="stSidebar"] summary svg { color: #6e6e73 !important; }
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"],
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {
+  color: #6e6e73 !important;
+  opacity: 1 !important;
+}
+
+/* Keep both sidebar navigation directions visible on light surfaces. */
+[data-testid="stSidebarCollapseButton"] button,
+[data-testid="stSidebarCollapsedControl"] button,
+[data-testid="stExpandSidebarButton"] {
+  color: #424245 !important;
+  background: #e8e8ed !important;
+  border: 1px solid #d2d2d7 !important;
+  border-radius: 9px !important;
+  opacity: 1 !important;
+}
+[data-testid="stSidebarCollapseButton"] button *,
+[data-testid="stSidebarCollapsedControl"] button *,
+[data-testid="stExpandSidebarButton"] * {
+  color: #424245 !important;
+  fill: currentColor !important;
+  opacity: 1 !important;
+}
+[data-testid="stSidebarCollapseButton"] button:hover,
+[data-testid="stSidebarCollapsedControl"] button:hover,
+[data-testid="stExpandSidebarButton"]:hover {
+  background: #dcdce2 !important;
+}
